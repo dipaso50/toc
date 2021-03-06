@@ -1,7 +1,7 @@
 {
     "rules": [
         {
-            "expresion": "jpeg$|png$",
+            "expresion": "jpeg$|png$|gif",
             "folder": "Imagenes"
         },
         {
@@ -23,6 +23,10 @@
         {
             "expresion": "exe$",
             "folder": "Ejecutables"
+        },
+        {
+            "expresion": "mp3$|mp4$",
+            "folder": "AudioVideo"
         }
     ]
 }
