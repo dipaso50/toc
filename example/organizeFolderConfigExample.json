@@ -1,0 +1,28 @@
+{
+    "rules": [
+        {
+            "expresion": "jpeg$|png$",
+            "folder": "Imagenes"
+        },
+        {
+            "expresion": "zip$|rar$|gzip$",
+            "folder": "Comprimidos"
+        },
+        {
+            "expresion": "doc$|odt$|pdf$",
+            "folder": "Documentos"
+        },
+        {
+            "expresion": "xls$|xlsx$",
+            "folder": "Excels"
+        },
+        {
+            "expresion": "txt$",
+            "folder": "Txt"
+        },
+        {
+            "expresion": "exe$",
+            "folder": "Ejecutables"
+        }
+    ]
+}
