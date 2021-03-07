@@ -19,7 +19,7 @@ var organizeFolderCmd = &cobra.Command{
 	Long:  `Organiza carpetas en base a reglas definidas en el fichero json pasado como parámetro`,
 	Run: func(cmd *cobra.Command, args []string) {
 
-		rules := organizebytype.ReadConfig(configFile)
+		rules := application.ReadConfig(configFile)
 
 		ruleManager := organizebytype.NewRuleManager()
 

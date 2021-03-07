@@ -7,6 +7,8 @@ import (
 
 type Move func(filename, filePath string) error
 
+//go:generate moq -out OrganizeByType_test.go . OrganizeByType
+
 type OrganizeByType interface {
 	ExistsDirectory(dirname string) (bool, error)
 	CreateDirectory(dirname string) error

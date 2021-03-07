@@ -24,7 +24,7 @@ func (oss OsOrganizer) CreateDirectory(dirname string) error {
 
 	if _, err := os.Stat(dirname); os.IsNotExist(err) {
 		fmt.Printf("Creando directorio %s\n", dirname)
-		os.MkdirAll(dirname, 0700)
+		return os.MkdirAll(dirname, 0700)
 	}
 	return nil
 }
