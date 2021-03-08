@@ -1,4 +1,4 @@
-package organizebytype
+package organizebyrule
 
 import (
 	"fmt"
@@ -7,21 +7,19 @@ import (
 
 type Move func(filename, filePath string) error
 
-//go:generate moq -out OrganizeByType_test.go . OrganizeByType
+//go:generate moq -out organizebyrule_mock.go . OrganizeByRule
 
-type OrganizeByType interface {
-	ExistsDirectory(dirname string) (bool, error)
-	CreateDirectory(dirname string) error
-	MoveFile(file domain.FileOrganizer) error
+type OrganizeByRule interface {
+	domain.Organize
 	IterateOverDirectory(dirname string, fn Move) error
 }
 
 type Service struct {
-	operations  OrganizeByType
+	operations  OrganizeByRule
 	ruleManager *RuleManager
 }
 
-func NewService(op OrganizeByType, ruleMan *RuleManager) Service {
+func NewService(op OrganizeByRule, ruleMan *RuleManager) Service {
 	return Service{operations: op, ruleManager: ruleMan}
 }
 

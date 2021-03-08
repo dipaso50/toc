@@ -1,4 +1,4 @@
-package organizebytype
+package organizebyrule
 
 import "tocV2/toc/domain"
 

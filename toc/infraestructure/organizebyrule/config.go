@@ -1,4 +1,4 @@
-package organizebytype
+package organizebyrule
 
 import (
 	"encoding/json"

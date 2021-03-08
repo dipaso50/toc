@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"tocV2/toc/application/organizebytype"
-	application "tocV2/toc/infraestructure/organizebytype"
+	"tocV2/toc/application/organizebyrule"
+	application "tocV2/toc/infraestructure/organizebyrule"
 
 	"github.com/spf13/cobra"
 )
@@ -21,14 +21,14 @@ var organizeFolderCmd = &cobra.Command{
 
 		rules := application.ReadConfig(configFile)
 
-		ruleManager := organizebytype.NewRuleManager()
+		ruleManager := organizebyrule.NewRuleManager()
 
 		for _, r := range rules.Rules {
 			ruleManager.AddRule(r.Expresion, r.Folder)
 		}
 
 		organizer := application.OsOrganizer{}
-		organizeService := organizebytype.NewService(organizer, ruleManager)
+		organizeService := organizebyrule.NewService(organizer, ruleManager)
 
 		organizeService.Execute(folder)
 	},

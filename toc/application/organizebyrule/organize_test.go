@@ -1,4 +1,4 @@
-package organizebytype
+package organizebyrule
 
 import (
 	"fmt"
@@ -12,7 +12,7 @@ func Test_MoveIfMatch(t *testing.T) {
 
 	var test string
 
-	mockedOrganizeByType := &OrganizeByTypeMock{
+	mockedOrganizeByType := &OrganizeByRuleMock{
 		CreateDirectoryFunc: func(dirname string) error {
 			panic("mock out the CreateDirectory method")
 		},
@@ -42,7 +42,7 @@ func Test_MoveIfMatchNotMatch(t *testing.T) {
 
 	var test string
 
-	mockedOrganizeByType := &OrganizeByTypeMock{
+	mockedOrganizeByType := &OrganizeByRuleMock{
 		MoveFileFunc: func(file domain.FileOrganizer) error {
 			test = file.Name
 			return nil
@@ -60,7 +60,7 @@ func Test_MoveIfMatchNotMatch(t *testing.T) {
 func Test_NotExistsDirectory(t *testing.T) {
 	rman := NewRuleManager()
 
-	mockedOrganizeByType := &OrganizeByTypeMock{
+	mockedOrganizeByType := &OrganizeByRuleMock{
 		CreateDirectoryFunc: func(dirname string) error {
 			panic("mock out the CreateDirectory method")
 		},
