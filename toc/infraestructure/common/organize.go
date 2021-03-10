@@ -9,6 +9,8 @@ import (
 
 type CommonOrganizer struct{}
 
+const MAX_GOROUTINES = 20
+
 func (oss CommonOrganizer) ExistsDirectory(dirname string) (bool, error) {
 
 	if _, err := os.Stat(dirname); os.IsNotExist(err) {

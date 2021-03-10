@@ -23,15 +23,21 @@ func (oss OsOrganizer) IterateOverDirectory(dirname string, fn organizebymodific
 	}
 
 	var wg sync.WaitGroup
+	sem := make(chan int, common.MAX_GOROUTINES)
 
 	for _, file := range fileInfo {
 
 		if !file.IsDir() {
 			wg.Add(1)
+			sem <- 1
 
 			go func(filename, dname string, mod time.Time) {
 
-				defer wg.Done()
+				defer func() {
+					wg.Done()
+					<-sem
+				}()
+
 				fn(filename, dname, mod)
 
 			}(file.Name(), dirname, file.ModTime())
