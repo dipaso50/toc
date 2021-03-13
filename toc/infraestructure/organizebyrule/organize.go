@@ -22,7 +22,7 @@ func (oss OsOrganizer) IterateOverDirectory(dirname string, fn organizebyrule.Mo
 	}
 
 	var wg sync.WaitGroup
-	sem := make(chan int, common.MAX_GOROUTINES)
+	sem := make(chan int, oss.MaxGoroutines())
 
 	for _, file := range fileInfo {
 

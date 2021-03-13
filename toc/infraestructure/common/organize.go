@@ -4,12 +4,27 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strconv"
 	"tocV2/toc/domain"
 )
 
 type CommonOrganizer struct{}
 
 const MAX_GOROUTINES = 20
+const GOROUTINES_LIMIT = "TOC_GOROUTIMES_LIMIT"
+
+func (oss CommonOrganizer) MaxGoroutines() int {
+	value, exists := os.LookupEnv(GOROUTINES_LIMIT)
+	if !exists {
+		return MAX_GOROUTINES
+	}
+
+	v, err := strconv.Atoi(value)
+	if err != nil {
+		return MAX_GOROUTINES
+	}
+	return v
+}
 
 func (oss CommonOrganizer) ExistsDirectory(dirname string) (bool, error) {
 

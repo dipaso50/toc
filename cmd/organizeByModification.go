@@ -28,7 +28,7 @@ var (
 
 // organizeByModificationCmd represents the organizeByModification command
 var organizeByModificationCmd = &cobra.Command{
-	Use:   "organizeByModification",
+	Use:   "byMod",
 	Short: "Organiza carpetas en base a la fecha de modificación de ficheros",
 	Long:  `Organiza los ficheros de una carpeta en base a su fecha de modificación`,
 	Run: func(cmd *cobra.Command, args []string) {

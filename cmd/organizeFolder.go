@@ -14,7 +14,7 @@ var (
 
 // organizeFolderCmd represents the organizeFolder command
 var organizeFolderCmd = &cobra.Command{
-	Use:   "organizeFolder",
+	Use:   "byRule",
 	Short: "Organiza carpetas en base a reglas",
 	Long:  `Organiza carpetas en base a reglas definidas en el fichero json pasado como parámetro`,
 	Run: func(cmd *cobra.Command, args []string) {
