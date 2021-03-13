@@ -15,7 +15,12 @@ $ git clone  https://github.com/dipaso50/toc.git
 $ cd toc
 $ make
 ```
-
+En cualquier sistema operativo con Docker instalado 
+```sh
+$ git clone  https://github.com/dipaso50/toc.git
+$ cd toc
+$ docker run --rm -v "$PWD":/usr/src/myapp -w /usr/src/myapp golang:1.15.6 make
+```
 Esto generará ejecutables para linux y windows en ./bin/linux y ./bin/windows respectivamente.
 
 ## Sintaxis
@@ -24,12 +29,12 @@ Esto generará ejecutables para linux y windows en ./bin/linux y ./bin/windows r
 ***Ayuda***
 ```sh
 $ toc help
-$ toc help organizeFolder
+$ toc help byRule
 ```
 
 ***Ejecutar el comando***
 ```sh
-$ toc organizeFolder -d ~/Descargas -f ./config.json
+$ toc byRule -d ~/Descargas -f ./config.json
 ```
 
 ## Ejemplo

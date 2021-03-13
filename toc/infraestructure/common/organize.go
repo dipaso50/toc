@@ -11,7 +11,7 @@ import (
 type CommonOrganizer struct{}
 
 const MAX_GOROUTINES = 20
-const GOROUTINES_LIMIT = "TOC_GOROUTIMES_LIMIT"
+const GOROUTINES_LIMIT = "TOC_GOROUTINES"
 
 func (oss CommonOrganizer) MaxGoroutines() int {
 	value, exists := os.LookupEnv(GOROUTINES_LIMIT)

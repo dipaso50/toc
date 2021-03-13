@@ -1,31 +1,31 @@
 {
     "rules": [
         {
-            "expresion": "jpeg$|png$|gif",
+            "expresion": "(?i)jpeg$|png$|gif$",
             "folder": "Imagenes"
         },
         {
-            "expresion": "zip$|rar$|gzip$",
+            "expresion": "(?i)zip$|rar$|gzip$",
             "folder": "Comprimidos"
         },
         {
-            "expresion": "doc$|odt$|pdf$",
+            "expresion": "(?i)doc$|odt$|pdf$",
             "folder": "Documentos"
         },
         {
-            "expresion": "xls$|xlsx$",
+            "expresion": "(?i)xls$|xlsx$",
             "folder": "Excels"
         },
         {
-            "expresion": "txt$",
+            "expresion": "(?i)txt$",
             "folder": "Txt"
         },
         {
-            "expresion": "exe$",
+            "expresion": "(?i)exe$",
             "folder": "Ejecutables"
         },
         {
-            "expresion": "mp3$|mp4$",
+            "expresion": "(?i)mp3$|mp4$",
             "folder": "AudioVideo"
         }
     ]

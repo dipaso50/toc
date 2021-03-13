@@ -32,7 +32,9 @@ var rootCmd = &cobra.Command{
 	Short: "Organizador de ficheros",
 	Long: `toc es una herramienta de organización de ficheros.
 	
-$> toc help para ayuda`,
+$> toc help para ayuda 
+
+La variable de entorno $TOC_GOROUTINES controla el número de gorutinas que realizan el trabajo (por defecto 20)`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	//	Run: func(cmd *cobra.Command, args []string) { },
