@@ -5,7 +5,7 @@ Las reglas de organización se definen el un fichero json que debe ser pasado co
 
 Las reglas se definen con expresiones regulares para abarcar el mayor número de casos y combinaciones de nombre de fichero posibles. 
 
-Ir **[aquí](/example/organizeFolderConfigExample.json)** para ver un ejemplo de json de configuración.
+
 
 ## Construcción
 ***
@@ -29,50 +29,26 @@ Esto generará ejecutables para linux y windows en ./bin/linux y ./bin/windows r
 ***Ayuda***
 ```sh
 $ toc help
-$ toc help byRule
-```
+toc es una herramienta de organización de ficheros.
+	
+$> toc help para ayuda 
 
-***Ejecutar el comando***
-```sh
-$ toc byRule -d ~/Descargas -f ./config.json
-```
+La variable de entorno $TOC_GOROUTINES controla el número de goroutinas que realizan el trabajo (por defecto 20)
 
-## Ejemplo
+Usage:
+  toc [command]
+
+Available Commands:
+  byMod       Organiza carpetas en base a la fecha de modificación de ficheros
+  byRule      Organiza carpetas en base a reglas
+  help        Help about any command
+
+Flags:
+  -h, --help   help for toc
+
+Use "toc [command] --help" for more information about a command.
+
+```
+## Ejemplos
 ***
-
-**Antes**
-```
-Descargas/
-├── sample.doc
-├── sample.gif
-├── sample.jpeg
-├── sample.mp3
-├── sample.mp4
-├── sample.odt
-├── sample.pdf
-├── sample.rar
-├── sample.txt
-├── sample.xls
-└── sample.zip
-```
-**Después**
-```
-Descargas/
-├── AudioVideo
-│   ├── sample.mp3
-│   └── sample.mp4
-├── Comprimidos
-│   ├── sample.rar
-│   └── sample.zip
-├── Documentos
-│   ├── sample.doc
-│   ├── sample.odt
-│   └── sample.pdf
-├── Excels
-│   └── sample.xls
-├── Imagenes
-│   ├── sample.gif
-│   └── sample.jpeg
-└── Txt
-    └── sample.txt
-```
+Ir **[aquí](example/README.MD)** para ver ejemplos
